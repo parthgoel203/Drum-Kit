@@ -8,7 +8,18 @@ for(var i=0; i<numberOfDrumButtons;i++)
 
     var buttonInnerHTML = this.innerHTML;
 
-    switch (buttonInnerHTML) {
+    makeSound(buttonInnerHTML);
+  };
+}
+
+//detecting keyboard press
+
+document.addEventListener("keyup",function(event) {
+  makeSound(event.key);
+});
+
+  function makeSound(key){
+    switch (key) {
       case "w":
       var tom1 = new Audio('sounds/tom-1.mp3');
       tom1.play();
@@ -43,11 +54,6 @@ for(var i=0; i<numberOfDrumButtons;i++)
                   var snare = new Audio('sounds/snare.mp3');
                   snare.play();
                     break;
-
-
       default:
-
     }
-
   }
-}
